@@ -1,0 +1,23 @@
+name: Build and Run C++ Program  # Name of the workflow
+
+on:
+  push:
+    branches:
+      - main  # The workflow is triggered when you push to the "main" branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # The environment to run the job on (Ubuntu in this case)
+
+    steps:
+    - name: Checkout repository  # First step is to check out your code
+      uses: actions/checkout@v2  # This action checks out your code from the repository
+
+    - name: Set up C++ environment  # Installing the C++ compiler
+      run: sudo apt-get install g++  # This installs the g++ compiler on the runner machine
+
+    - name: Compile the C++ code  # Step to compile your C++ code
+      run: g++ main.cpp -o program  # Compiles main.cpp and generates an executable called "program"
+
+    - name: Run the C++ program  # Step to execute the compiled program
+      run: ./program  # Runs the compiled program and outputs the result to the GitHub Actions log
