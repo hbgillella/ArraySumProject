@@ -16,10 +16,29 @@ std::vector<int> twoSum(std::vector<int>& nums, int target) {
 }
 
 int main() {
-    std::vector<int> nums = {2, 7, 11, 15};
-    int target = 9;
-    std::vector<int> result = twoSum(nums, target);
+    // Example 1
+    {
+        std::vector<int> nums = {2, 7, 11, 15};
+        int target = 9;
+        std::vector<int> result = twoSum(nums, target);
+        std::cout << "Example 1: [" << result[0] << ", " << result[1] << "]" << std::endl;
+    }
 
-    std::cout << "[" << result[0] << ", " << result[1] << "]" << std::endl;
+    // Example 2
+    {
+        std::vector<int> nums = {3, 2, 4};
+        int target = 6;
+        std::vector<int> result = twoSum(nums, target);
+        std::cout << "Example 2: [" << result[0] << ", " << result[1] << "]" << std::endl;
+    }
+
+    // Example 3
+    {
+        std::vector<int> nums = {3, 3};
+        int target = 6;
+        std::vector<int> result = twoSum(nums, target);
+        std::cout << "Example 3: [" << result[0] << ", " << result[1] << "]" << std::endl;
+    }
+
     return 0;
 }
