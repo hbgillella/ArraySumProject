@@ -12,18 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Check out the repository
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # Step 2: Install C++ compiler
     - name: Install C++ compiler
       run: sudo apt-get update && sudo apt-get install -y g++
 
-    # Step 3: Compile the C++ code
     - name: Compile C++ program
-      run: g++ -o program main.cpp
+      run: g++ -o program src/main.cpp
 
-    # Step 4: Run the compiled program
-    - name: Run the program
+
+    - name: Run the C++ program
       run: ./program
